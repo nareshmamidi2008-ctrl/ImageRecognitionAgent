@@ -22,6 +22,11 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 model = YOLO("yolov8n.pt")
 
+@app.get("/")
+def home():
+    return {
+        "message": "Image Recognition API is running!"
+    }
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
