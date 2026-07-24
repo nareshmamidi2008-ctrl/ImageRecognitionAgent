@@ -48,7 +48,7 @@
 
     }
     catch (err) {
-        console.log(err);
-        alert("Backend is not running.");
-    }
+    console.error(err);
+    alert("Error: " + err.message);
+}
 }
